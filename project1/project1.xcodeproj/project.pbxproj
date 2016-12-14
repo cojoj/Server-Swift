@@ -418,7 +418,16 @@
 		70FB3E991E017A2100922549 /* contact.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contact.stencil; sourceTree = "<group>"; };
 		70FB3E9A1E017B1100922549 /* footer.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footer.stencil; sourceTree = "<group>"; };
 		70FB3E9B1E017DC900922549 /* staff.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staff.stencil; sourceTree = "<group>"; };
-		70FB3E9C1E01814A00922549 /* master.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master.stencil; sourceTree = "<group>"; };
+		70FB3EA01E0184E600922549 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		70FB3EA11E0184E600922549 /* site.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = site.css; sourceTree = "<group>"; };
+		70FB3EA31E0184E600922549 /* glyphicons-halflings-regular.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.eot"; sourceTree = "<group>"; };
+		70FB3EA41E0184E600922549 /* glyphicons-halflings-regular.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "glyphicons-halflings-regular.svg"; sourceTree = "<group>"; };
+		70FB3EA51E0184E600922549 /* glyphicons-halflings-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.ttf"; sourceTree = "<group>"; };
+		70FB3EA61E0184E600922549 /* glyphicons-halflings-regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.woff"; sourceTree = "<group>"; };
+		70FB3EA71E0184E600922549 /* glyphicons-halflings-regular.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.woff2"; sourceTree = "<group>"; };
+		70FB3EA91E0184E600922549 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		70FB3EAB1E0184E600922549 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
+		70FB3EAC1E01850300922549 /* master.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master.stencil; sourceTree = "<group>"; };
 		OBJ_100 /* TextBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_101 /* URLEncodedBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_103 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -693,13 +702,61 @@
 		70FB3E971E01790700922549 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70FB3EAC1E01850300922549 /* master.stencil */,
 				70FB3E981E01795400922549 /* home.stencil */,
 				70FB3E991E017A2100922549 /* contact.stencil */,
 				70FB3E9A1E017B1100922549 /* footer.stencil */,
 				70FB3E9B1E017DC900922549 /* staff.stencil */,
-				70FB3E9C1E01814A00922549 /* master.stencil */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		70FB3E9E1E0184E600922549 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3E9F1E0184E600922549 /* css */,
+				70FB3EA21E0184E600922549 /* fonts */,
+				70FB3EA81E0184E600922549 /* images */,
+				70FB3EAA1E0184E600922549 /* js */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		70FB3E9F1E0184E600922549 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3EA01E0184E600922549 /* bootstrap.min.css */,
+				70FB3EA11E0184E600922549 /* site.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		70FB3EA21E0184E600922549 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3EA31E0184E600922549 /* glyphicons-halflings-regular.eot */,
+				70FB3EA41E0184E600922549 /* glyphicons-halflings-regular.svg */,
+				70FB3EA51E0184E600922549 /* glyphicons-halflings-regular.ttf */,
+				70FB3EA61E0184E600922549 /* glyphicons-halflings-regular.woff */,
+				70FB3EA71E0184E600922549 /* glyphicons-halflings-regular.woff2 */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		70FB3EA81E0184E600922549 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3EA91E0184E600922549 /* logo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		70FB3EAA1E0184E600922549 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3EAB1E0184E600922549 /* bootstrap.min.js */,
+			);
+			path = js;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Socket */ = {
@@ -924,6 +981,7 @@
 		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
+				70FB3E9E1E0184E600922549 /* public */,
 				70FB3E971E01790700922549 /* Views */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
