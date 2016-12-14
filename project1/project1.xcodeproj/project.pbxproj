@@ -414,6 +414,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70FB3E981E01795400922549 /* home.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = home.stencil; sourceTree = "<group>"; };
+		70FB3E991E017A2100922549 /* contact.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contact.stencil; sourceTree = "<group>"; };
+		70FB3E9A1E017B1100922549 /* footer.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footer.stencil; sourceTree = "<group>"; };
 		OBJ_100 /* TextBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_101 /* URLEncodedBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_103 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -685,6 +688,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70FB3E971E01790700922549 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70FB3E981E01795400922549 /* home.stencil */,
+				70FB3E991E017A2100922549 /* contact.stencil */,
+				70FB3E9A1E017B1100922549 /* footer.stencil */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
@@ -907,6 +920,7 @@
 		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
+				70FB3E971E01790700922549 /* Views */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_146 /* Tests */,

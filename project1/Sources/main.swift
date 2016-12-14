@@ -1,22 +1,24 @@
 import Kitura
 import HeliumLogger
 import LoggerAPI
+import KituraStencil
 
 HeliumLogger.use()
 let router = Router()
+router.setDefault(templateEngine: StencilTemplateEngine())
 
 router.get("/") { request, response, next in
-    response.send("Welcome to Million Hairs")
-    next()
+    defer { next() }
+    try response.render("home", context: [:])
+}
+
+router.get("/contact") { request, response, next in
+    defer { next() }
+    try response.render("contact", context: [:])
 }
 
 router.get("/staff") { request, response, next in
     response.send("Meet our great team")
-    next()
-}
-
-router.get("/contact") { request, response, next in
-    response.send("Get in touch with us")
     next()
 }
 

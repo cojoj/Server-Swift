@@ -1,0 +1,6 @@
+<html>
+    {% include "footer.stencil" %}
+    <body>
+        <h1>Welcome to Million Hairs</h1>
+    </body>
+</html>
