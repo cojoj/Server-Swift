@@ -44,5 +44,10 @@ router.get("/staff/:name") { request, response, next in
     try response.render("staff", context: context)
 }
 
+router.get("/staff") { request, response, next in
+    defer { next() }
+    try response.render("staff", context: [:])
+}
+
 Kitura.addHTTPServer(onPort: 8090, with: router)
 Kitura.run()
