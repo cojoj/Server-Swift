@@ -417,6 +417,8 @@
 		70FB3E981E01795400922549 /* home.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = home.stencil; sourceTree = "<group>"; };
 		70FB3E991E017A2100922549 /* contact.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contact.stencil; sourceTree = "<group>"; };
 		70FB3E9A1E017B1100922549 /* footer.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footer.stencil; sourceTree = "<group>"; };
+		70FB3E9B1E017DC900922549 /* staff.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staff.stencil; sourceTree = "<group>"; };
+		70FB3E9C1E01814A00922549 /* master.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master.stencil; sourceTree = "<group>"; };
 		OBJ_100 /* TextBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_101 /* URLEncodedBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyParser.swift; sourceTree = "<group>"; };
 		OBJ_103 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -694,6 +696,8 @@
 				70FB3E981E01795400922549 /* home.stencil */,
 				70FB3E991E017A2100922549 /* contact.stencil */,
 				70FB3E9A1E017B1100922549 /* footer.stencil */,
+				70FB3E9B1E017DC900922549 /* staff.stencil */,
+				70FB3E9C1E01814A00922549 /* master.stencil */,
 			);
 			path = Views;
 			sourceTree = "<group>";
