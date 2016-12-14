@@ -416,7 +416,6 @@
 /* Begin PBXFileReference section */
 		70FB3E981E01795400922549 /* home.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = home.stencil; sourceTree = "<group>"; };
 		70FB3E991E017A2100922549 /* contact.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contact.stencil; sourceTree = "<group>"; };
-		70FB3E9A1E017B1100922549 /* footer.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = footer.stencil; sourceTree = "<group>"; };
 		70FB3E9B1E017DC900922549 /* staff.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staff.stencil; sourceTree = "<group>"; };
 		70FB3EA01E0184E600922549 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		70FB3EA11E0184E600922549 /* site.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = site.css; sourceTree = "<group>"; };
@@ -705,7 +704,6 @@
 				70FB3EAC1E01850300922549 /* master.stencil */,
 				70FB3E981E01795400922549 /* home.stencil */,
 				70FB3E991E017A2100922549 /* contact.stencil */,
-				70FB3E9A1E017B1100922549 /* footer.stencil */,
 				70FB3E9B1E017DC900922549 /* staff.stencil */,
 			);
 			path = Views;

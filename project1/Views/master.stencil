@@ -47,7 +47,7 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         {% block body %}{% endblock %}
-        {% include "footer.stencil" %}
+        <p>Copyright &copy; 2017 Million Hairs Veterinary Clinic</p>
       </div>
 
       <p style="text-align: center;"><img src="/static/images/logo.png" style="width: 116px;" /></p>
