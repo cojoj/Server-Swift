@@ -5,6 +5,16 @@ import SwiftyJSON
 import CouchDB
 import Foundation
 
+// MARK: String Extension
+
+extension String {
+    func removingHTMLEncoding() -> String {
+        let result = self.replacingOccurrences(of: "+", with: " ")
+        return result.removingPercentEncoding ?? result
+    }
+}
+
+
 HeliumLogger.use()
 
 let connectionProperties = ConnectionProperties(host: "localhost", port: 5984, secured: false)
@@ -49,8 +59,67 @@ router.get("/polls/list") { request, response, next in
     }
 }
 
+router.post("/polls/create", middleware: BodyParser())
 router.post("/polls/create") { request, response, next in
-    defer { next() }
+    // 2: check we have some data submitted
+    guard let values = request.body else {
+        try response.status(.badRequest).end()
+        return
+    }
+    
+    // 3: attempt to pull out URL-encoded values from the submission
+    guard case .urlEncoded(let body) = values else {
+        try response.status(.badRequest).end()
+        return
+    }
+    
+    // 4: create an array of fields to check
+    let fields = ["title", "option1", "option2"]
+    
+    // this is where we'll store our trimmed values
+    var poll = [String: Any]()
+    
+    for field in fields {
+        // check that this field exists, and if it does remove any whitespace
+        if let value = body[field]?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            // make sure it has at least 1 character
+            if value.characters.count > 0 {
+                // add it to our list of parsed values
+                poll[field] = value.removingHTMLEncoding()
+                // important: this value exists, so go on to the next one
+                continue
+            } }
+        // this value does not exist, so send back an error and exit
+        try response.status(.badRequest).end()
+        return
+    }
+    
+    // fill in default values for the vote counts
+    poll["votes1"] = 0
+    poll["votes2"] = 0
+    
+    // convert it to JSON, which is what CouchDB ingests
+    let json = JSON(poll)
+    
+    database.create(json) { id, revision, doc, error in
+        defer { next() }
+        if let id = id {
+            // document was created successfully; return it back to the user
+            let status = ["status": "ok", "id": id]
+            let result = ["result": status]
+            let json = JSON(result)
+            response.status(.OK).send(json: json)
+        } else {
+            // something went wrong – attempt to find out what
+            let errorMessage = error?.localizedDescription ?? "Unknown error"
+            let status = ["status": "error", "message": errorMessage]
+            let result = ["result": status]
+
+            let json = JSON(result)
+            // mark that this is a problem on our side, not the  client's
+            response.status(.internalServerError).send(json: json)
+        }
+    }
 }
 
 router.post("/polls/vote/:pollid/:option") { request, response, next in
