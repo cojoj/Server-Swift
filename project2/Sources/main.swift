@@ -121,10 +121,10 @@ router.post("/polls/create") { request, response, next in
     }
 }
 
-router.post("/polls/vote/:pollid/:option") { request, response, next in
+router.post("/polls/vote/:pollid") { request, response, next in
     // ensure both parameters have values
     guard let poll = request.parameters["pollid"],
-          let option = request.parameters["option"] else {
+          let option = request.queryParameters["option"] else {
             try response.status(.badRequest).end()
             return
     }
