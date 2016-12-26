@@ -14,7 +14,6 @@ extension String {
     }
 }
 
-
 HeliumLogger.use()
 
 let connectionProperties = ConnectionProperties(host: "localhost", port: 5984, secured: false)
@@ -154,6 +153,43 @@ router.post("/polls/vote/:pollid/:option") { request, response, next in
             database.update(id, rev: rev, document: newDocument) { rev,
                 doc, error in
                 defer { next() }
+                if let error = error {
+                    let status = ["status": "error"]
+                    let result = ["result": status]
+                    let json = JSON(result)
+                    response.status(.conflict).send(json: json)
+                } else {
+                    let status = ["status": "ok"]
+                    let result = ["result": status]
+                    let json = JSON(result)
+                    response.status(.OK).send(json: json)
+                }
+            }
+        }
+    }
+}
+
+router.delete("/polls/delete/:pollid") { request, response, next in
+    // Ensure we have poll id
+    guard let poll = request.parameters["pollid"] else {
+        try response.status(.badRequest).end()
+        return
+    }
+    
+    // First we need to retrieve poll from database
+    database.retrieve(poll) { doc, error in
+        if let error = error {
+            // something went wrong!
+            let errorMessage = error.localizedDescription
+            let status = ["status": "error", "message": errorMessage]
+            let result = ["result": status]
+            let json = JSON(result)
+            response.status(.notFound).send(json: json)
+            next()
+        } else if let doc = doc {
+            database.delete(doc["_id"].stringValue, rev: doc["_rev"].stringValue) { error in
+                defer { next() }
+                
                 if let error = error {
                     let status = ["status": "error"]
                     let result = ["result": status]
